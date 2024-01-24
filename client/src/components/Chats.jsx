@@ -139,10 +139,7 @@ export default function Chats(props) {
           </div>
         ) : ''
       }
-
-    
-
-
+      
     </div>
   )
 }

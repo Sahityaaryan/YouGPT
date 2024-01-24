@@ -8,7 +8,6 @@ import cookieParser from 'cookie-parser';
 import register from './routes/register.route.js';
 import signIn from './routes/signin.route.js';
 import generate from './routes/generate.route.js';
-import authVerifyMiddleware from "./middlewares/authVerify.middleware.js"
 const PORT = process.env.PORT;
 
 

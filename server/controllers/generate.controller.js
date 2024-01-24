@@ -3,13 +3,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-import authVerifyMiddleware from "../middlewares/authVerify.middleware.js"
-
 import { GoogleGenerativeAI } from "@google/generative-ai";
 export default async function generate(req,res){
 
     
-   try {
+   try {    
 
 
 // Access your API key as an environment variable (see "Set up your API key" above)
