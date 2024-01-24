@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+'use client'
+
+import { useState } from 'react'
+import MainChat from './components/MainChat';
+import PreviousChatSection from './components/PreviousChatsComponents/PreviousChatSection';
+import { FaArrowRightLong } from "react-icons/fa6";
+
+
+export default function App() {
+
+  const [showSection, setShowSection] = useState(false);
+  const [rotate, setRotate] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className='bg-[#2c2d33]'>
+
+      <div className='h-screen w-full flex '>
+
+        <div className={`flex ${showSection ? 'w-[20%]':'w-2'}`}>
+     
+          {
+            showSection && (
+              <>
+                <div className= 'h-full'>
+                  <PreviousChatSection/>
+                </div>
+              </>
+            )
+          }
+
+          <button onClick={() => {
+            setShowSection(!showSection)
+            setRotate(!rotate)
+          }}>
+
+            <FaArrowRightLong
+              size={22}
+              className={`border transition-all ${(rotate) ? 'rotate-180' : 'rotate-0'} border-[rgba(225,225,225,.5)] ${(rotate) ? 'hover:rotate-0' : 'hover:rotate-180'} bg-[rgba(225,225,225,.55)] hover:rounded-[50%] `}
+            />
+          </button>
+        </div>
+
+
+        
+       <div className={`${(showSection) ?'w-[80%]':'w-[100%]'} h-full `}> 
+
+          <MainChat />
+        </div>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    </main>
   )
 }
 
-export default App
+
