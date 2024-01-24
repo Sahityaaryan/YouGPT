@@ -20,7 +20,7 @@ const PORT = process.env.PORT;
 
 // middlewares
 // parse the cookies sent by the client in request headers
-app.use(cookieParser());
+
 // Parse application/json request bodies
 app.use(bodyParser.json());
 
