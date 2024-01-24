@@ -48,10 +48,11 @@ export default function Chats(props) {
 
       setLoading(true);
 
+      console.log("prompt: ",prompt)
+
       if (prompt) {
 
         // I am sending a post request by this method but it is not working it is giving me an error from the server "unexpected end of json" what that it means but the server and api are working fine they don't have any issues , and the suppuse the value of "prompt" is "how are you?"
-
       
         const res = await axios.post('/api/generate', { "prompt": prompt }, {
           headers: {
@@ -76,7 +77,7 @@ export default function Chats(props) {
         
       } else {
         setChat({ ...chat,['aiMessage']: 'Please include some prompt' });
-        setLoading(false);
+        setLoading(false);  
         return;
       }
 
@@ -84,7 +85,7 @@ export default function Chats(props) {
       console.log("error: ", e);
        if(e.response.data.message=='Unauthorized Access'){
         setLoading(false);
-        // window.location.replace('/user/api/signin')
+        window.location.replace('/user/api/signin')
         return;
     } 
       setChat({ ...chat,['aiMessage']: 'Something went wrong' });
