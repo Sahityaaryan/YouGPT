@@ -1,9 +1,2 @@
-
-playground-view: terminal-editor-browser
-terminals:
-    [
-        'cd client && npm install && npm run dev',
-        'cd server && npm install && npm run dev',
-        'echo "We''re ready"',
-    ]
-tabs: ['README.md', './client/src/App.jsx' , './server/server.js']
+terminals:['static-server -p 1337 --no-cache']
+tabs: ['README.md', './client/src/App.jsx' , './server/server.js'] 
