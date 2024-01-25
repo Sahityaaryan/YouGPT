@@ -1,2 +1,2 @@
-tabs: ['README.md']
+tabs: ['README.md', './client/src/App.jsx' , './server/server.js']
 playground-view: terminal-editor-browser
