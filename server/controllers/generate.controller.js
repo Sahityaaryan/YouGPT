@@ -13,7 +13,6 @@ export default async function generate(req,res){
 // Access your API key as an environment variable (see "Set up your API key" above)
 
 
-
 const usrReq = req.body;
 
 const prompt =  usrReq.prompt;
@@ -43,10 +42,4 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
    }
 
-    }
-
-
-
-
-
-
+}

@@ -51,7 +51,7 @@ if(req.url === '/api/generate'){
 // Routes
 app.use('/api/register',register);
 app.use('/api/signin',signIn);
-app.use('/api/generate',generate)
+app.use('/api/generate',generate);
 
 
 

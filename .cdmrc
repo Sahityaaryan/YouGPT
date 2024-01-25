@@ -1,2 +1,12 @@
-tabs: ['README.md', './client/src/App.jsx' , './server/server.js']
+
 playground-view: terminal-editor-browser
+# terminals
+terminals:
+    [
+        'cd client && npm install && npm run dev',
+        'cd server && npm install && npm run dev',
+        'echo "We''re ready"',
+    ]
+# other config
+tabs: ['README.md', './client/src/App.jsx' , './server/server.js']
+run-button: clear && node $$file
